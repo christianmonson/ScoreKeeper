@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Game.h"
+#import "Player.h"
 
 @interface GameController : NSObject
 
@@ -15,9 +16,11 @@
 
 + (GameController *)sharedInstance;
 
-- (void)addGame:(Game *)game;
+- (Game *)addGameWithName:(NSString *)name;
 - (void)removeGame:(Game *)game;
-- (void)replaceGame:(Game *)oldGame withGame:(Game *)newGame;
-- (void)moveFromIndex:(NSInteger)oldIndex toNewIndex:(NSInteger)newIndex;
+- (void)removePlayer:(Player *)player;
+- (void)addPlayerToGame:(Game *)game;
+
+-(void)save;
 
 @end
